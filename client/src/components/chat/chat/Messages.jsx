@@ -61,11 +61,11 @@ const Messages = ({ person, conversation }) => {
 
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ transition: 'smooth' });
-    }, [messages])
+    }, [messages, person._id, conversation._id])
 
     useEffect(() => {
         incomingMessage && conversation?.members?.includes(incomingMessage.senderId) && setMessages(prev => [...prev, incomingMessage]);
-    }, [incomingMessage, conversation])
+    }, [incomingMessage, conversation, conversation.senderId])
 
     const sendText = async (e) => {
         const code = e.keyCode || e.which;
