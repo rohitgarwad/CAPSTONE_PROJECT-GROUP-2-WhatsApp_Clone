@@ -28,12 +28,12 @@ const Component = styled(Box)`
 const LeftComponent = styled(Box)`
     width: 25%;
     height: 100%;
-    min-width: 450px;
+    min-width: 0px;
 `;
 
 const RightComponent = styled(Box)`
     width: 75%;
-    min-width: 300px;
+    min-width: 600px;
     height: 100%;
     border-left: 1px solid rgba(0, 0, 0, 0.14);
 `
