@@ -1,8 +1,9 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
-import { FormatUnderlined, MoreVert } from "@mui/icons-material";
+import {  MoreVert } from "@mui/icons-material";
 import { Menu, MenuItem, styled } from '@mui/material';
+import { AccountContext } from '../../../context/AccountProvider';
 
 
 const MenuOption = styled(MenuItem)`
@@ -20,12 +21,18 @@ const HeaderMenu = ({ setOpenDrawer }) => {
 
     const [open, setOpen] = useState(null);
 
+    const { setAccount } = useContext(AccountContext);
+
     const handleClose = () => {
         setOpen(null);
     }
 
     const handleClick = (e) => {
         setOpen(e.currentTarget);
+    }
+
+    const logOut = () => {
+        setAccount(null);
     }
 
     return (
@@ -47,7 +54,8 @@ const HeaderMenu = ({ setOpenDrawer }) => {
                 }}
             >
                 <MenuOption onClick={() => { handleClose(); setOpenDrawer(true); }}>Profile</MenuOption>
-                <MenuOption ><Logout href='http://localhost:3000/'>Logout</Logout></MenuOption>
+                <MenuOption onClick={() => { logOut()}}>Logout</MenuOption>
+                {/* <MenuOption ><Logout href='http://localhost:3000/'>Logout</Logout></MenuOption> */}
             </Menu>
         </>
     )
