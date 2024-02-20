@@ -44,9 +44,9 @@ const EmptyChat = () => {
         <Component>
             <Container>
                 <Image src={emptyChatImage} alt='image' />
-                <Title> WhatsApp Web</Title>
-                <SubTitle> Now send and receive messages without keeping your phone online. </SubTitle>
-                <SubTitle> Use WhatsApp on up to 4 linked devices and 1 phone at the same time. </SubTitle>
+                <Title> WhatsApp Clone Web</Title>
+                <SubTitle> Now send and receive messages through this clone app online. </SubTitle>
+                <SubTitle> Enjoy your time here. Happy Chatting! </SubTitle>
                 <StyledDivider />
             </Container>
         </Component>
