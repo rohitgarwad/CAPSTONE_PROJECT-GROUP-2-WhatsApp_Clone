@@ -12,12 +12,12 @@ import Message from './Message';
 const Wrapper = styled(Box)`
     background-image: url(${'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'});
     width: 100%;
-    height: 92%;
+    height: 88%;
     background-size: 50%;
 `;
 
 const Components = styled(Box)`
-    height: 80vh;
+    height: 83vh;
     overflow-y: scroll;
 `;
 
@@ -61,11 +61,11 @@ const Messages = ({ person, conversation }) => {
 
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ transition: 'smooth' });
-    }, [messages, person._id, conversation._id])
+    }, [messages])
 
     useEffect(() => {
         incomingMessage && conversation?.members?.includes(incomingMessage.senderId) && setMessages(prev => [...prev, incomingMessage]);
-    }, [incomingMessage, conversation, conversation.senderId])
+    }, [incomingMessage, conversation])
 
     const sendText = async (e) => {
         const code = e.keyCode || e.which;

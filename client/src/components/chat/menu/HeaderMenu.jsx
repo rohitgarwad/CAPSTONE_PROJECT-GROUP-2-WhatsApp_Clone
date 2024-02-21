@@ -11,17 +11,17 @@ const MenuOption = styled(MenuItem)`
     padding: 15px 60px 5px 24px;
     color: #4A4A4A;
 `
-const Logout = styled('a')({
-    textDecoration: "none",
-    color: 'black'
-})
+// const Logout = styled('a')({
+//     textDecoration: "none",
+//     color: 'black'
+// })
 
 
 const HeaderMenu = ({ setOpenDrawer }) => {
 
     const [open, setOpen] = useState(null);
 
-    const { setAccount } = useContext(AccountContext);
+    const { setAccount,  setPerson, setActiveUsers } = useContext(AccountContext);
 
     const handleClose = () => {
         setOpen(null);
@@ -33,6 +33,8 @@ const HeaderMenu = ({ setOpenDrawer }) => {
 
     const logOut = () => {
         setAccount(null);
+        setPerson({})
+        setActiveUsers([]);
     }
 
     return (
